@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e # halt script on error
+
+# network environment info
+curl -s http://whatismyip.akamai.com | xargs echo "IP: "
+dig whoami.akamai.net +short | xargs echo "whoami: "
+
+# see PATH variables for debugging
+echo $PATH
