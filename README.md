@@ -3,7 +3,7 @@ Testing Travis-CI commands for Akamai DevOps
 
 Be sure to use `travis` CLI on your local machine to encrypte your `.edgerc` file with the necessary credentials.
 
-In my repo, I have a folder (`_data`) that is ignored which is where I have my Akamai API PURGE Credentials saved as a text file.  You DON'T want your API Credentials made public, so be sure to take proper precautions!  When you run the `travis` CLI, be mindful of where you are running the command and the input/output options.  I like having the `ENC` output in the root directory of the repo, which makes it easy for Travis to find and decrypt.  When you decrypt, the Akamai CLI expects the default file to be `.edgerc`, which is what I have [in my `.travis.yml` file](/justinrummel/akamai-travis/blob/master/.travis.yml#L16) vs. the output example that is below.
+In my repo, I have a folder `_data/` ([that is ignored](https://github.com/justinrummel/akamai-travis/blob/master/.gitignore#L107)) which is where I have my Akamai API PURGE Credentials saved as a text file.  You DON'T want your API Credentials made public, so be sure to take proper precautions!  When you run the `travis` CLI, be mindful of where you are running the command and the input/output options.  I like having the `.enc` output in the root directory of the repo, which makes it easy for Travis to find and decrypt.  When you decrypt, the Akamai CLI expects the default file to be `.edgerc`, which is what I have [in my `.travis.yml` file](https://github.com/justinrummel/akamai-travis/blob/master/.travis.yml#L16) vs. the output example that is below.
 
 #### Example Output:
 
