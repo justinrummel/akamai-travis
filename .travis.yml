@@ -9,12 +9,21 @@ virtualenv:
 addons:
   apt:
     packages:
-      - dnsutils # for dig command in /script/cibuild
+      - dnsutils        # for dig command in /script/cibuild
+      - golang-1.8-go   # for akamai cli packages
 
 before_script:
   - chmod +x ./script/cibuild
 
 script: ./script/cibuild
+
+before_deploy:
+  - curl -L https://github.com/akamai/cli/releases/download/1.0.2/akamai-1.0.2-linuxamd64 -o akamai
+  - chmod +x akamai
+  - export PATH=$PATH:$PWD
+  - echo "Y" | akamai -version
+  - sleep 5
+  - echo "Y" | akamai install purge
 
 deploy:
   - provider: script
