@@ -11,7 +11,6 @@ addons:
     packages:
       - dnsutils    # for dig command in /script/cibuild
       - golang-go   # for akamai cli packages
-      - dep         # for go compile of akamai-purge
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_47d2d923bf7d_key -iv $encrypted_47d2d923bf7d_iv -in edgerc.txt.enc -out .edgerc -d
