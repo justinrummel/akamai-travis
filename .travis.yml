@@ -21,17 +21,8 @@ before_script:
 script: ./script/cibuild
 
 before_deploy:
-  - curl -L https://github.com/akamai/cli/releases/download/1.0.2/akamai-1.0.2-linuxamd64 -o akamai
-  - chmod +x akamai
-  - export PATH=$PATH:$PWD
-  - echo "Y" | akamai -version
-  - sleep 5
-#  - echo "Y" | akamai install purge
-#  - sleep 5
-  - go get github.com/akamai/cli-purge
-  - cd $GOPATH/src/github.com/akamai/cli-purge
-#  - dep ensure
-  - go build -o akamai-purge
+  - curl -L https://github.com/akamai/cli-purge/releases/download/1.0.0/akamai-purge-1.0.0-linuxamd64 -o akamai-purge
+  - chmod +x akamai-purge
   - export PATH=$PATH:$PWD
 
 deploy:
@@ -43,4 +34,4 @@ deploy:
 
 after_deploy:
   - |
-    akamai purge --edgerc .edgerc --section travis delete --cpcode 490267
+    akamai-pruge --edgerc .edgerc --section travis delete --cpcode 490267
