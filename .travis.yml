@@ -27,6 +27,7 @@ before_deploy:
   - echo "Y" | akamai -version
   - sleep 5
   - echo "Y" | akamai install purge
+  - sleep 5
 
 deploy:
   - provider: script
