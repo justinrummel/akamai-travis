@@ -25,3 +25,5 @@ Make sure not to add _data/edgerc.txt to the git repository.
 Commit all changes to your .travis.yml.
 admin@macbook ~/GIT/akamai-travis>
 ```
+
+Travis Build Results: [https://travis-ci.org/justinrummel/akamai-travis/jobs/429319392](https://travis-ci.org/justinrummel/akamai-travis/jobs/429319392)
