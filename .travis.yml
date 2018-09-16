@@ -30,7 +30,7 @@ before_deploy:
 #  - sleep 5
   - go get github.com/akamai/cli-purge
   - cd $GOPATH/src/github.com/akamai/cli-purge
-  - dep ensure
+#  - dep ensure
   - go build -o akamai-purge
   - export PATH=$PATH:$PWD
 
